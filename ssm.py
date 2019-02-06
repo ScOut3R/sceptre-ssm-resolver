@@ -30,7 +30,7 @@ class SSM(Resolver):
         decoded_value = None
         if self.argument:
             param = self.argument
-            connection_manager = self.stack.connection_manager
+            connection_manager = self.stack.template.connection_manager
             try:
                 response = connection_manager.call(
                     service="ssm",
