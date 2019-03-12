@@ -45,6 +45,6 @@ class SSM(Resolver):
                 if "ParameterNotFound" in e.response["Error"]["Code"]:
                     self.logger.error("%s - ParameterNotFound: %s",
                                       self.stack.name, param)
-                    raise e
+                raise e
             decoded_value = response['Parameter']['Value']
         return decoded_value
